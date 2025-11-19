@@ -3,10 +3,10 @@ const oracledb = require('oracledb');
 async function connectDB() {
   try {
     const connection = await oracledb.getConnection({
-      user: 'sys',  // Tên người dùng SYS
-      password: '12345',  // Mật khẩu của tài khoản SYS
-      connectString: 'localhost:1521/ORCL21PDB1',  // Kết nối với service name
-      privilege: oracledb.SYSDBA  // Quyền SYSDBA
+      user: 'QLCH_MYPHAM',
+      // Please replace 'YOUR_PASSWORD_HERE' with your actual password
+      password: '111',
+      connectString: 'localhost:1521/XEPDB1'
     });
 
     console.log('Connected to Oracle Database!');

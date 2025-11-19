@@ -1,7 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const connectDB = require('./db');  // Đảm bảo import đúng hàm connectDB
+const { connectDB } = require('./config/db');
+
+const userRoutes = require('./routes/userRoutes');
 
 const app = express();
 app.use(cors());
@@ -14,6 +16,8 @@ connectDB().then(() => {
 });
 
 // API routes
+app.use('/api/users', userRoutes);
+
 app.listen(5000, () => {
   console.log('Server running on port 5000');
 });
